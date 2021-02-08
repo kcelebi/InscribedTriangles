@@ -1,2 +1,3 @@
 # InscribedTriangles
-WolframDemonstrations demo Mathematica code
+
+See the demonstration [here](https://demonstrations.wolfram.com/InscribedTrianglesInPolygons/).
