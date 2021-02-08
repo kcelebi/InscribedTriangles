@@ -2,7 +2,7 @@
 
 See the demonstration [here](https://demonstrations.wolfram.com/InscribedTrianglesInPolygons/).
 
-![alt text](/img/demo3.jpg)
+![alt text](/img/demo3.png)
 
 
 This Demonstration shows all possible triangles that can be inscribed in a polygon of `n` sides  and counts the number of noncongruent kinds of triangles.
