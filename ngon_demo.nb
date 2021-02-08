@@ -1,0 +1,348 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15271,        340]
+NotebookOptionsPosition[     14787,        323]
+NotebookOutlinePosition[     15185,        339]
+CellTagsIndexPosition[     15142,        336]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"triangle", ">", 
+       RowBox[{"Length", "[", 
+        RowBox[{"Subsets", "[", 
+         RowBox[{
+          RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+          RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], ",", 
+      RowBox[{"triangle", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"Subsets", "[", 
+         RowBox[{
+          RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+          RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Row", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"Append", "[", 
+              RowBox[{
+               RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+               RowBox[{
+                RowBox[{"CirclePoints", "[", "nPolygon", "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "]"}], 
+            RowBox[{"(*", 
+             RowBox[{
+              RowBox[{"the", " ", "n"}], "-", "gon"}], "*)"}], ",", 
+            "\[IndentingNewLine]", "White", ",", 
+            RowBox[{"EdgeForm", "@", "Thick"}], ",", "\[IndentingNewLine]", 
+            "Red", ",", "\[IndentingNewLine]", 
+            RowBox[{"Triangle", "[", 
+             RowBox[{
+              RowBox[{"Subsets", "[", 
+               RowBox[{
+                RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+                RowBox[{"{", "3", "}"}]}], "]"}], "[", 
+              RowBox[{"[", "triangle", "]"}], "]"}], "]"}]}], 
+           RowBox[{"(*", 
+            RowBox[{
+            "Triangle", " ", "from", " ", "part", " ", "of", " ", "subsets"}],
+             "*)"}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"ImageSize", "\[Rule]", " ", "200"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"PlotRange", "\[Rule]", " ", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}]}], "}"}]}]}], 
+         "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+        "\"\<  \>\"", ",", "\[IndentingNewLine]", 
+        RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<n-gon\>\"", ",", "Italic", ",", 
+               RowBox[{"TextAlignment", "\[Rule]", " ", "Center"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "20"}]}], "]"}], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Table", "[", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"IntegerPartitions", "[", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"k", ",", "3", ",", "20"}], "}"}]}], "]"}], "[", 
+                 RowBox[{"[", 
+                  RowBox[{"nPolygon", "-", "2"}], "]"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "18"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}]}], 
+              "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<Number of Distinct Triangles\>\"", ",", 
+               RowBox[{"TextAlignment", "\[Rule]", " ", "Center"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "20"}]}], "]"}], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Table", "[", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"IntegerPartitions", "[", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"k", ",", "3", ",", "20"}], "}"}]}], "]"}], "[", 
+                 RowBox[{"[", 
+                  RowBox[{"nPolygon", "-", "2"}], "]"}], "]"}], "[", 
+                RowBox[{"[", "2", "]"}], "]"}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "18"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}]}], 
+              "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{"\"\<Number of Triangles\>\"", ",", 
+               RowBox[{"TextAlignment", "\[Rule]", " ", "Center"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "20"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"Length", "[", 
+                RowBox[{"Subsets", "[", 
+                 RowBox[{
+                  RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+                  RowBox[{"{", "3", "}"}]}], "]"}], "]"}], ",", 
+               RowBox[{"FontSize", "\[Rule]", " ", "18"}], ",", 
+               RowBox[{"FontFamily", "\[Rule]", " ", "\"\<Times\>\""}]}], 
+              "]"}]}], "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", 
+          "}"}], 
+         RowBox[{"(*", 
+          RowBox[{"formatting", " ", "text", " ", "stuff"}], "*)"}], 
+         "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", " ", "520"}]}], "\[IndentingNewLine]", 
+     "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"nPolygon", ",", "3", ",", "15", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"triangle", ",", "1", ",", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Subsets", "[", 
+       RowBox[{
+        RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+        RowBox[{"{", "3", "}"}]}], "]"}], "]"}], ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.735761549979062*^9, 3.735761676770443*^9}, {
+   3.7357617095773582`*^9, 3.7357617314231443`*^9}, {3.7357617886791353`*^9, 
+   3.735761848762123*^9}, 3.735761912317441*^9, {3.735761945557419*^9, 
+   3.735762058484902*^9}, {3.735762149870287*^9, 3.7357621520967913`*^9}, {
+   3.7357621936766987`*^9, 3.735762201596511*^9}, {3.735762231821604*^9, 
+   3.735762244392211*^9}, {3.7357622946005993`*^9, 3.735762347622636*^9}, {
+   3.73576239679659*^9, 3.73576239716742*^9}, {3.736026150671812*^9, 
+   3.73602615167098*^9}, {3.736026192622313*^9, 3.7360262451698933`*^9}, {
+   3.736026396675074*^9, 3.736026493635841*^9}, {3.73602669973765*^9, 
+   3.736026790367584*^9}, {3.736699722178958*^9, 3.736699962638335*^9}, {
+   3.736699994320162*^9, 3.7367000084312897`*^9}, {3.736700081011434*^9, 
+   3.736700117079362*^9}, {3.736700148534754*^9, 3.736700155221875*^9}, {
+   3.736700228545558*^9, 3.73670022982609*^9}, {3.736700621406617*^9, 
+   3.736700783644433*^9}, {3.736700907530921*^9, 3.736701086192243*^9}, {
+   3.736701227245777*^9, 3.736701409315556*^9}, {3.736703364248684*^9, 
+   3.736703526868984*^9}, {3.7367038283573437`*^9, 3.7367038332957277`*^9}, {
+   3.736703886261427*^9, 3.736703951713786*^9}, {3.736703986026682*^9, 
+   3.7367040105509167`*^9}, 3.736704158090192*^9, {3.736704254183495*^9, 
+   3.736704305749062*^9}, {3.7367044884207163`*^9, 3.736704522889266*^9}, {
+   3.736704619439432*^9, 3.73670474564126*^9}, {3.7367050574227448`*^9, 
+   3.736705089588869*^9}, {3.7367051899605913`*^9, 3.736705198420336*^9}, {
+   3.736705265110757*^9, 3.7367053363773003`*^9}, {3.7367053697360067`*^9, 
+   3.736705506704748*^9}, {3.7367055915996027`*^9, 3.7367055928337317`*^9}, {
+   3.736705629487866*^9, 3.73670566791109*^9}, {3.73670610912059*^9, 
+   3.7367061685491533`*^9}, {3.736706358650145*^9, 3.736706360760372*^9}, {
+   3.736706904622115*^9, 3.736707041296653*^9}, {3.736707310885189*^9, 
+   3.736707326082141*^9}, {3.736707364749983*^9, 3.736707423812689*^9}, {
+   3.736707541782016*^9, 3.7367076035773573`*^9}, {3.7367076579835777`*^9, 
+   3.7367076655204573`*^9}, {3.7367079079050207`*^9, 3.736707934106675*^9}, {
+   3.736708000520681*^9, 3.736708014158399*^9}, {3.73670810848385*^9, 
+   3.736708124458838*^9}, {3.736708247199045*^9, 3.7367082500101013`*^9}, {
+   3.736708835227714*^9, 
+   3.7367088775353937`*^9}},ExpressionUUID->"13945bfb-4e17-4e50-93ff-\
+8ecb39b6107e"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 13, $CellContext`triangle$$ = 
+    16, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`nPolygon$$], 3, 15, 1}, {
+      Hold[$CellContext`triangle$$], 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, 
+    Typeset`size$$ = {520., {97., 103.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`nPolygon$218713$$ = 0, $CellContext`triangle$218714$$ =
+     0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 3, $CellContext`triangle$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$218713$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$218714$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 200, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], "  ", 
+          TableForm[{{
+             Style[
+             "n-gon", Italic, TextAlignment -> Center, FontFamily -> "Times", 
+              FontSize -> 20], 
+             Style[
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1], FontSize -> 18, 
+              FontFamily -> "Times"]}, {
+             Style[
+             "Number of Distinct Triangles", TextAlignment -> Center, 
+              FontFamily -> "Times", FontSize -> 20], 
+             Style[
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2], FontSize -> 18, 
+              FontFamily -> "Times"]}, {
+             Style[
+             "Number of Triangles", TextAlignment -> Center, FontFamily -> 
+              "Times", FontSize -> 20], 
+             Style[
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]], FontSize -> 18, 
+              FontFamily -> "Times"]}}]}, ImageSize -> 520]), 
+      "Specifications" :> {{$CellContext`nPolygon$$, 3, 15, 1, Appearance -> 
+         "Labeled"}, {$CellContext`triangle$$, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{565., {157., 163.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7367074022635107`*^9, 3.736707424498942*^9}, 
+   3.736707566421998*^9, 3.736707634322502*^9, 3.736707668894765*^9, {
+   3.736707910128779*^9, 3.73670793454381*^9}, 3.73670801471567*^9, 
+   3.736708125474133*^9, {3.736708250936384*^9, 3.736708272959902*^9}, {
+   3.736708842415249*^9, 
+   3.7367088780269623`*^9}},ExpressionUUID->"66483da9-5587-4019-8f2b-\
+60df84672b17"]
+}, Open  ]]
+},
+WindowSize->{1114, 847},
+WindowMargins->{{-1610, Automatic}, {Automatic, -95}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0ccb6667-208a-4afc-b662-28450da9fb59"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 9669, 194, 787, "Input",ExpressionUUID->"13945bfb-4e17-4e50-93ff-8ecb39b6107e"],
+Cell[10252, 218, 4519, 102, 339, "Output",ExpressionUUID->"66483da9-5587-4019-8f2b-60df84672b17"]
+}, Open  ]]
+}
+]
+*)
+

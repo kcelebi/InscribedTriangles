@@ -1,0 +1,1224 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframCDFPlayer 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       163,          7]
+NotebookDataLength[     46990,       1216]
+NotebookOptionsPosition[     42354,       1072]
+NotebookOutlinePosition[     43958,       1123]
+CellTagsIndexPosition[     43630,       1111]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Inscribed Triangles in Polygons", "DemoTitle",
+ CellChangeTimes->{{3.736702798040687*^9, 3.736702837628214*^9}, {
+  3.736704414970169*^9, 3.736704417890834*^9}}],
+
+Cell["", "InitializationSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"triangle", ">", 
+       RowBox[{"Length", "[", 
+        RowBox[{"Subsets", "[", 
+         RowBox[{
+          RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+          RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], ",", 
+      RowBox[{"triangle", "=", 
+       RowBox[{"Length", "[", 
+        RowBox[{"Subsets", "[", 
+         RowBox[{
+          RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+          RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}]}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Row", "[", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Line", "[", 
+            RowBox[{"Append", "[", 
+             RowBox[{
+              RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+              RowBox[{
+               RowBox[{"CirclePoints", "[", "nPolygon", "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "]"}], 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"the", " ", "n"}], "-", "gon"}], "*)"}], ",", 
+           "\[IndentingNewLine]", "White", ",", 
+           RowBox[{"EdgeForm", "@", "Thick"}], ",", "\[IndentingNewLine]", 
+           "Red", ",", "\[IndentingNewLine]", 
+           RowBox[{"Triangle", "[", 
+            RowBox[{
+             RowBox[{"Subsets", "[", 
+              RowBox[{
+               RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+               RowBox[{"{", "3", "}"}]}], "]"}], "[", 
+             RowBox[{"[", "triangle", "]"}], "]"}], "]"}]}], 
+          RowBox[{"(*", 
+           RowBox[{
+           "Triangle", " ", "from", " ", "part", " ", "of", " ", "subsets"}], 
+           "*)"}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"ImageSize", "\[Rule]", " ", "335"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}]}], "}"}]}]}], 
+        "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{"Grid", "[", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{"\"\<polygon sides\>\"", ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"k", ",", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"IntegerPartitions", "[", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"k", ",", "3", ",", "20"}], "}"}]}], "]"}], "[", 
+                RowBox[{"[", 
+                 RowBox[{"nPolygon", "-", "2"}], "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], "\[IndentingNewLine]", "}"}],
+             ",", "\[IndentingNewLine]", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{"\"\<noncongruent triangles\>\"", ",", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"k", ",", 
+                    RowBox[{"Length", "[", 
+                    RowBox[{"IntegerPartitions", "[", 
+                    RowBox[{"k", ",", 
+                    RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"k", ",", "3", ",", "20"}], "}"}]}], "]"}], "[", 
+                RowBox[{"[", 
+                 RowBox[{"nPolygon", "-", "2"}], "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}], "\[IndentingNewLine]", "}"}],
+             ",", "\[IndentingNewLine]", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{"\"\<all triangles\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"Length", "[", 
+               RowBox[{"Subsets", "[", 
+                RowBox[{
+                 RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+                 RowBox[{"{", "3", "}"}]}], "]"}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Invisible", "@", "\"\<number of triangles\>\""}], ",", 
+              RowBox[{"Invisible", "@", "1000"}]}], "}"}]}], 
+           "\[IndentingNewLine]", "}"}], ",", 
+          RowBox[{"Alignment", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"Left", ",", "Center"}], "}"}], "}"}]}], ",", 
+          RowBox[{"BaseStyle", "\[Rule]", 
+           RowBox[{"{", "20", "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+        "]"}]}], "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}]}],
+    ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"nPolygon", ",", "4", ",", "\"\<polygon sides\>\""}], "}"}], 
+     ",", "3", ",", "15", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"triangle", ",", "1", ",", " ", "\"\<triangles\>\""}], "}"}], 
+     ",", "1", ",", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Subsets", "[", 
+       RowBox[{
+        RowBox[{"CirclePoints", "[", "nPolygon", "]"}], ",", 
+        RowBox[{"{", "3", "}"}]}], "]"}], "]"}], ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{
+  3.736702368074149*^9, 3.736708301935492*^9, {3.736867183009944*^9, 
+   3.7368672644737773`*^9}, {3.73713641372523*^9, 3.737136437562612*^9}, {
+   3.737136493050427*^9, 3.7371364997205553`*^9}, {3.737136530570201*^9, 
+   3.737136754482583*^9}, {3.737136800135846*^9, 3.737136853867024*^9}, {
+   3.737136902580505*^9, 3.737136910005344*^9}, {3.7371369486957293`*^9, 
+   3.737137010896092*^9}, {3.7371373729407463`*^9, 3.7371373734006147`*^9}, {
+   3.737137781610229*^9, 3.7371377834329977`*^9}, {3.7371378263905783`*^9, 
+   3.737137829331328*^9}, {3.737155582466301*^9, 3.737155683858357*^9}, {
+   3.7371557304749928`*^9, 3.737155745680142*^9}, {3.7371561503269453`*^9, 
+   3.737156191405314*^9}, {3.7373097659833226`*^9, 3.7373097666395674`*^9}, 
+   3.737309810638036*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 4, $CellContext`triangle$$ = 1,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 4, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 1, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, 
+    Typeset`size$$ = {597., {165., 170.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`nPolygon$1490$$ = 0, $CellContext`triangle$1491$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 4, $CellContext`triangle$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1490$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1491$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 4, "polygon sides"}, 3, 
+         15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 1, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{640., {223., 229.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->117688640]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "This Demonstration shows all possible triangles that can be inscribed in a \
+polygon of ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath"],
+ " sides (an ",
+ Cell[BoxData[
+  FormBox["n", TraditionalForm]], "InlineMath"],
+ "-gon) and counts the number of noncongruent kinds of triangles."
+}], "ManipulateCaption",
+ CellChangeTimes->{{3.736702391037157*^9, 3.736702463676724*^9}, {
+   3.736702739539145*^9, 3.73670275899044*^9}, {3.737137067279911*^9, 
+   3.7371370763231688`*^9}, {3.737137444952361*^9, 3.737137452117301*^9}, {
+   3.737137482863958*^9, 3.737137498401021*^9}, {3.737137984438836*^9, 
+   3.737138036082794*^9}, {3.7371553506203403`*^9, 3.7371554301908693`*^9}, {
+   3.737155463078106*^9, 3.73715546595798*^9}, {3.737155884124782*^9, 
+   3.73715592762621*^9}, 3.737156000888475*^9, {3.737156048615096*^9, 
+   3.737156125765088*^9}, {3.737156281067127*^9, 3.737156288040722*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 7, $CellContext`triangle$$ = 
+    22, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 7, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 22, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`nPolygon$1545$$ = 
+    0, $CellContext`triangle$1546$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 7, $CellContext`triangle$$ = 
+        22}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1545$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1546$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 7, "polygon sides"}, 3, 
+         15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 22, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->405162981]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 15, $CellContext`triangle$$ = 
+    1, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 15, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 1, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`nPolygon$1600$$ = 
+    0, $CellContext`triangle$1601$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 15, $CellContext`triangle$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1600$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1601$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 15, "polygon sides"}, 3,
+          15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 1, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->80346748],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 5, $CellContext`triangle$$ = 5,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 5, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 5, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`nPolygon$1655$$ = 
+    0, $CellContext`triangle$1656$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 5, $CellContext`triangle$$ = 
+        5}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1655$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1656$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 5, "polygon sides"}, 3, 
+         15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 5, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->582488969],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 7, $CellContext`triangle$$ = 1,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 7, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 1, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`nPolygon$1710$$ = 
+    0, $CellContext`triangle$1711$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 7, $CellContext`triangle$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1710$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1711$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 7, "polygon sides"}, 3, 
+         15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 1, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->117511907],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`nPolygon$$ = 4, $CellContext`triangle$$ = 1,
+     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`nPolygon$$], 4, "polygon sides"}, 3, 15, 1}, {{
+       Hold[$CellContext`triangle$$], 1, "triangles"}, 1, 
+      Dynamic[
+       Length[
+        Subsets[
+         CirclePoints[$CellContext`nPolygon$$], {3}]]], 1}}, 
+    Typeset`size$$ = {597., {165., 170.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`nPolygon$1765$$ = 0, $CellContext`triangle$1766$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`nPolygon$$ = 4, $CellContext`triangle$$ = 
+        1}, "ControllerVariables" :> {
+        Hold[$CellContext`nPolygon$$, $CellContext`nPolygon$1765$$, 0], 
+        Hold[$CellContext`triangle$$, $CellContext`triangle$1766$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (If[$CellContext`triangle$$ > Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {
+            3}]], $CellContext`triangle$$ = Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]]; Row[{
+          Graphics[{
+            Line[
+             Append[
+              CirclePoints[$CellContext`nPolygon$$], 
+              Part[
+               CirclePoints[$CellContext`nPolygon$$], 1]]], White, 
+            EdgeForm[Thick], Red, 
+            Triangle[
+             Part[
+              Subsets[
+               CirclePoints[$CellContext`nPolygon$$], {
+               3}], $CellContext`triangle$$]]}, ImageSize -> 335, 
+           PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}}], 
+          Text[
+           Grid[{{"polygon sides", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 1]}, {
+             "noncongruent triangles", 
+              Part[
+               Part[
+                Table[{$CellContext`k, 
+                  Length[
+                   IntegerPartitions[$CellContext`k, {3}]]}, {$CellContext`k, 
+                  3, 20}], $CellContext`nPolygon$$ - 2], 2]}, {
+             "all triangles", 
+              Length[
+               Subsets[
+                CirclePoints[$CellContext`nPolygon$$], {3}]]}, {
+              Invisible["number of triangles"], 
+              Invisible[1000]}}, Alignment -> {{Left, Center}}, 
+            BaseStyle -> {20}]]}]), 
+      "Specifications" :> {{{$CellContext`nPolygon$$, 4, "polygon sides"}, 3, 
+         15, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`triangle$$, 1, "triangles"}, 1, 
+         Dynamic[
+          Length[
+           Subsets[
+            CirclePoints[$CellContext`nPolygon$$], {3}]]], 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{640., {223., 229.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->108975031]
+}, Open  ]],
+
+Cell["", "DetailsSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.7368685671453085`*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.73686856824888*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9, 
+  3.737137098006226*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.737156301184122*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["IntegerPartitions", "SearchTerms",
+ CellChangeTimes->{{3.73670833376511*^9, 3.736708337000024*^9}, 
+   3.737137119629488*^9},
+ CellID->681983903],
+
+Cell["polygons", "SearchTerms",
+ CellChangeTimes->{{3.736708339915454*^9, 3.736708354077682*^9}},
+ CellID->295942372],
+
+Cell["triangles", "SearchTerms",
+ CellChangeTimes->{{3.736708345079337*^9, 3.736708355675123*^9}},
+ CellID->1482103264],
+
+Cell["inscribed", "SearchTerms",
+ CellChangeTimes->{{3.7367083467336607`*^9, 3.736708357587317*^9}},
+ CellID->895401660],
+
+Cell["inscription", "SearchTerms",
+ CellChangeTimes->{{3.7367083592331038`*^9, 3.736708360366644*^9}},
+ CellID->1311554836],
+
+Cell["triangle", "SearchTerms",
+ CellChangeTimes->{{3.736708361707137*^9, 3.73670836323547*^9}},
+ CellID->1617095066],
+
+Cell["polygon", "SearchTerms",
+ CellChangeTimes->{{3.7367083641816683`*^9, 3.7367083655339203`*^9}},
+ CellID->1160172603],
+
+Cell["n-gon", "SearchTerms",
+ CellChangeTimes->{{3.7367083814846373`*^9, 3.7367083879180717`*^9}},
+ CellID->1543861576]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "RelatedLinksSection"],
+
+Cell[TextData[ButtonBox["Catalan Number",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/CatalanNumber.html"], None},
+ ButtonNote->
+  "http://mathworld.wolfram.com/CatalanNumber.html"]], "RelatedLinks",
+ CellChangeTimes->{{3.7368677941387796`*^9, 3.7368677941387796`*^9}},
+ CellID->661055763],
+
+Cell[TextData[ButtonBox["Labeled Fuss-Catalan Polygon Divisions",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/LabeledFussCatalanPolygonDivisions/\
+"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/LabeledFussCatalanPolygonDivisions/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.7368679681947174`*^9, 3.7368679681947174`*^9}},
+ CellID->802651461],
+
+Cell[TextData[ButtonBox["Labeled Polygon Triangulations",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/LabeledPolygonTriangulations/"], 
+   None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/LabeledPolygonTriangulations/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.736868061654633*^9, 3.736868061654633*^9}},
+ CellID->33880080],
+
+Cell[TextData[ButtonBox["Polygons on n Vertices",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/PolygonsOnNVertices/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/PolygonsOnNVertices/"]], "RelatedLinks",
+ CellChangeTimes->{{3.736867931345936*^9, 3.736867931345936*^9}},
+ CellID->672843565],
+
+Cell[TextData[ButtonBox["Polygon Triangulations",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/PolygonTriangulations/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/PolygonTriangulations/"]], "RelatedLinks",
+ CellChangeTimes->{{3.736868002713365*^9, 3.736868015271259*^9}},
+ CellID->148952644],
+
+Cell[TextData[ButtonBox["Stirling Numbers of the Second Kind",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/StirlingNumbersOfTheSecondKind/"], 
+   None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/StirlingNumbersOfTheSecondKind/"]], \
+"RelatedLinks",
+ CellChangeTimes->{{3.736868123917904*^9, 3.736868123917904*^9}},
+ CellID->402680034],
+
+Cell[TextData[ButtonBox["Triangulation Maze",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://demonstrations.wolfram.com/TriangulationMaze/"], None},
+ ButtonNote->
+  "http://demonstrations.wolfram.com/TriangulationMaze/"]], "RelatedLinks",
+ CellChangeTimes->{{3.7368688024460964`*^9, 3.73686881267439*^9}},
+ CellID->351785583],
+
+Cell[TextData[ButtonBox["Tripod",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://mathworld.wolfram.com/Tripod.html"], None},
+ ButtonNote->"http://mathworld.wolfram.com/Tripod.html"]], "RelatedLinks",
+ CellChangeTimes->{{3.736868633159271*^9, 3.7368686437859073`*^9}},
+ CellID->42572365]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Kaya \[CapitalCCedilla]elebi",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Kaya+Celebi"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Kaya+Celebi"]
+}], "Author",
+ CellChangeTimes->{{3.736708444789339*^9, 3.7367084478806963`*^9}}],
+
+Cell[TextData[{
+ "Suggested by: ",
+ ButtonBox["Matthew Hoek",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Matthew+Hoek"], 
+    None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Matthew+Hoek"]
+}], "Author",
+ CellChangeTimes->{{3.736708537345615*^9, 3.736708543742529*^9}},
+ CellID->798053852]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1086, 879},
+WindowMargins->{{Automatic, 35}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[31830, 768, 355, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[32188, 779, 678, 16, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[32869, 797, 340, 11, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[33212, 810, 637, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[33852, 827, 884, 22, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[34739, 851, 393, 10, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[35135, 863, 1505, 32, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[36643, 897, 908, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 42738, 1084},
+ {"RotateAndZoomIn3D", 42846, 1087},
+ {"DragLocators", 42955, 1090},
+ {"CreateAndDeleteLocators", 43070, 1093},
+ {"SliderZoom", 43183, 1096},
+ {"GamepadControls", 43288, 1099},
+ {"AutomaticAnimation", 43401, 1102},
+ {"BookmarkAnimation", 43517, 1105}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[585, 22, 167, 2, 76, "DemoTitle"],
+Cell[755, 26, 33, 0, 301, "InitializationSection"],
+Cell[CellGroupData[{
+Cell[813, 30, 29, 0, 205, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[867, 34, 6867, 154, 636, "Input"],
+Cell[7737, 190, 3840, 88, 464, "Output",
+ CellID->117688640]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11626, 284, 36, 0, 181, "ManipulateCaptionSection"],
+Cell[11665, 286, 923, 17, 23, "ManipulateCaption"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12625, 308, 28, 0, 179, "ThumbnailSection"],
+Cell[12656, 310, 3790, 87, 38, "Output",
+ CellID->405162981]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16483, 402, 28, 0, 149, "SnapshotsSection"],
+Cell[16514, 404, 3789, 87, 38, "Output",
+ CellID->80346748],
+Cell[20306, 493, 3786, 87, 38, "Output",
+ CellID->582488969],
+Cell[24095, 582, 3786, 87, 38, "Output",
+ CellID->117511907],
+Cell[27884, 671, 3840, 88, 39, "Output",
+ CellID->108975031]
+}, Open  ]],
+Cell[31739, 762, 26, 0, 340, "DetailsSection"],
+Cell[CellGroupData[{
+Cell[31790, 766, 37, 0, 114, "ControlSuggestionsSection"],
+Cell[31830, 768, 355, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[32188, 779, 678, 16, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[32869, 797, 340, 11, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[33212, 810, 637, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[33852, 827, 884, 22, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[34739, 851, 393, 10, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[35135, 863, 1505, 32, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[36643, 897, 908, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37588, 923, 30, 0, 158, "SearchTermsSection"],
+Cell[37621, 925, 151, 3, 22, "SearchTerms",
+ CellID->681983903],
+Cell[37775, 930, 117, 2, 22, "SearchTerms",
+ CellID->295942372],
+Cell[37895, 934, 119, 2, 22, "SearchTerms",
+ CellID->1482103264],
+Cell[38017, 938, 120, 2, 22, "SearchTerms",
+ CellID->895401660],
+Cell[38140, 942, 123, 2, 22, "SearchTerms",
+ CellID->1311554836],
+Cell[38266, 946, 117, 2, 22, "SearchTerms",
+ CellID->1617095066],
+Cell[38386, 950, 121, 2, 22, "SearchTerms",
+ CellID->1160172603],
+Cell[38510, 954, 119, 2, 22, "SearchTerms",
+ CellID->1543861576]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38666, 961, 31, 0, 143, "RelatedLinksSection"],
+Cell[38700, 963, 322, 7, 22, "RelatedLinks",
+ CellID->661055763],
+Cell[39025, 972, 394, 9, 22, "RelatedLinks",
+ CellID->802651461],
+Cell[39422, 983, 371, 9, 22, "RelatedLinks",
+ CellID->33880080],
+Cell[39796, 994, 340, 7, 22, "RelatedLinks",
+ CellID->672843565],
+Cell[40139, 1003, 344, 7, 22, "RelatedLinks",
+ CellID->148952644],
+Cell[40486, 1012, 381, 9, 22, "RelatedLinks",
+ CellID->402680034],
+Cell[40870, 1023, 333, 7, 22, "RelatedLinks",
+ CellID->351785583],
+Cell[41206, 1032, 294, 6, 22, "RelatedLinks",
+ CellID->42572365]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41537, 1043, 25, 0, 141, "AuthorSection"],
+Cell[41565, 1045, 378, 10, 22, "Author"],
+Cell[41946, 1057, 380, 11, 22, "Author",
+ CellID->798053852]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
